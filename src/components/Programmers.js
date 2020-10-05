@@ -37,6 +37,8 @@ export default function Programmers() {
     // It's going to utilize both slices of state to return the _name_ of the featured dev.
     // The beauty of closures is that we can "see" both slices of state from this region
     // of the program, without needing to inject the information through arguments.
+    let programmerName = programmers[programmerID-1].name
+    return programmerName
   };
 
   const style = {
@@ -66,7 +68,7 @@ export default function Programmers() {
           // Pseudo-code: if the currently featured id is truthy render text 1, otherwise render text 2.
           // Replace the hard-coded false with the correct variable.
           programmerID
-            ? `🎉 Let's celebrate ${getNameOfFeatured(programmers, programmerID)}! 🥳`
+            ? `🎉 Let's celebrate ${getNameOfFeatured()}! 🥳`
             : 'Pick an awesome programmer'
         }
       </div>
